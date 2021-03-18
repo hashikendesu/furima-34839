@@ -21,19 +21,17 @@
 
 ## items テーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| name       | string     | null: false                    |
-| text       | text       | null: false                    |
-| category   | integer    | null: false                    |
-| statu      | integer    | null: false                    |
-| charge     | integer    | null: false                    |
-| area       | integer    | null: false                    |
-| time       | integer    | null: false                    |
-| price      | integer    | null: false                    |
-| commission | integer    | null: false                    |
-| profit     | integer    | null: false                    |
-| user       | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| name        | string     | null: false                    |
+| text        | text       | null: false                    |
+| category_id | integer    | null: false                    |
+| statu_id    | integer    | null: false                    |
+| charge_id   | integer    | null: false                    |
+| area_id     | integer    | null: false                    |
+| time_id     | integer    | null: false                    |
+| price       | integer    | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -44,13 +42,8 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| card_number   | integer    | null: false                    |
-| card_year     | date       | null: false                    |
-| card_month    | date       | null: false                    |
-| security_code | integer    | null: false                    |
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
-| address       | references | null: false, foreign_key: true |
 
 ### Association
 
