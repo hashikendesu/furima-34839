@@ -60,6 +60,21 @@ describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
+      it '半角英数混合では出品できない' do
+        @item.price = 'test1234'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+      it '半角英語だけでは出品できない' do
+        @item.price = 'testtest'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+      it '299円以下では出品できない' do
+        @item.price = 100
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
     end
   end
 end

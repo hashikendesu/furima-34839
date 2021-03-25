@@ -85,6 +85,7 @@
     <%# /配送について %>
 
     <%# 販売価格 %>
+    <script src="new.js"></script>
     <div class="sell-price">
       <div class="weight-bold-text question-text">
         <span>販売価格<br>(¥300〜9,999,999)</span>
@@ -113,17 +114,6 @@
         </span>
       </div>
     </div>
-    <script type="text/javascript">
-      $(function(){
-        $( document ).on( 'keyup', '#item-price', function(){ 
-          let amount = $( this ).val();
-          let tax = Math.ceil(amount * 0.1);
-          let profit = Math.floor(amount * 0.9);
-          $('#add-tax-price').html(tax);
-          $('#profit').html(profit);
-        });
-      });
-    </script>
     <%# /販売価格 %>
     <%# 注意書き %>
     <div class="caution">
@@ -165,3 +155,4 @@
     </p>
   </footer>
 </div>
+
