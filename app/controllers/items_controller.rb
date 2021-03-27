@@ -49,7 +49,7 @@ class ItemsController < ApplicationController
         redirect_to action: :index
       end
     else
-      redirect_to action: :index
+      redirect_to action: :new
     end
     
   end
